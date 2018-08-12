@@ -10,3 +10,8 @@
   position: sticky;
   top: 0;
 }
+
+mat-sidenav-content {
+  display: flex;
+  flex-direction: column;
+}

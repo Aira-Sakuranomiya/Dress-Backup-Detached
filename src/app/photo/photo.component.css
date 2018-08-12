@@ -1,29 +1,39 @@
 img {
   max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 :host {
   display: flex;
+  flex: 1;
 }
+
 #wrapper {
   flex: 1;
-  text-align: center;
+  justify-content: center;
 }
+
 mat-list {
   width: 360px;
 }
+
 h4 {
-  color: rgba(0,0,0,0.87);
+  color: rgba(0, 0, 0, 0.87);
   font-size: 16px;
   line-height: 16px;
 }
+
 p[mat-line].mat-line {
   display: flex;
-  color: rgba(0,0,0,0.54);
-  font-size: 14px ;
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 14px;
   line-height: 14px;
   margin-top: 4px;
 }
+
 p[mat-line] > span {
   margin-right: 15px;
 }
