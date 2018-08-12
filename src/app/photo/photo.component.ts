@@ -20,7 +20,7 @@ export class PhotoComponent {
 
   constructor(private route: ActivatedRoute) {}
 
-  async load(event) {
+  async load() {
     const self = this;
     EXIF.getData(this.image.nativeElement, function() {
       const exif = EXIF.getAllTags(this);
