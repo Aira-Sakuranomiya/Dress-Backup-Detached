@@ -1,0 +1,20 @@
+language: node_js
+node_js: node
+env:
+  secure:
+    bFI+FDnJMbDCiNC7OabtL2Cg/Ql4B9gK1Djjkd9pBuqQsCMAvkEtet3MY3GgVBzr/W+4Wn3czvNnBGh0Z/lXpEd/86huUuPpFGLJNiI9sEX4Fe6PrK1HcoG+vLZz1o9i1ve/o7hpaEwvA0yUOCUkhPE6h/2l9moI5v/g4q0u+eyGczNy9E+7HqJDEEJgUQzSY7Vv0T2LQzCbHMnJai1dlVNIH0MGLrbGUrNU1eSg2VbpCQIOFDQpKzsi42uVGYOBAD80vuxJmFJmk1HPkDvvP86QYF0P7L4AEOpvDfat5/ENNyGW8qJx8QCOEnxQxWlazNBzRYwJ0n5ZrtSZd9TowSyy71UCTNZMBRU/CR9iMzo5QD2aS/MA06zO+XcZlOKmHLUbu2HCd24vhhnH+bygNSQC+YWiTc2WVBKRbdHtg6/ThrwsDaOufkzXjHCWKndZ+s+Wx4/bZkBoqnaA5TzpqBS5YnybheXzlh0bKzw8iB0EIH9mYlGinNfd0z+vti8q4XkFPmG62nUjt7g8kDk2Mbdvx0yL2erjyPD0jV7ZhNt7ROdBpf43Ntf/0g0xoEom8rG9PHRBZyzByhfJlNrSos6T/37B1hvDTJjO6XDVJpeOllLw1l//TdC6yFb67kWlHUpzhu1Nm0iXVpJuIMPFcMy4kKw9EC7cJiyGCPc5XJM=
+
+cache:
+  directories:
+    - '$HOME/.npm'
+
+script: npm run build
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  fqdn: satori.mycard.moe
+  local-dir: dist/dress
+  committer-from-gh: true
+  on:
+    branch: web

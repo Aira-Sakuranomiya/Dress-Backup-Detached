@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "dress": "./src/build/build.sh"
+    "postinstall": "./src/build/build.sh"
   },
   "private": true,
   "dependencies": {
