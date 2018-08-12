@@ -14,5 +14,6 @@ deploy:
   github-token: $GITHUB_TOKEN
   local-dir: dist/dress
   committer-from-gh: true
+  keep-history: true
   on:
     branch: web
