@@ -1,0 +1,16 @@
+img {
+  height: 215px;
+  margin-left: 2px;
+  margin-right: 2px;
+  transition: transform 0.2s;
+}
+
+img:hover {
+  transform: scale(1.04);
+}
+
+:host {
+  margin-left: 16px;
+  margin-right: 16px;
+  float: left;
+}

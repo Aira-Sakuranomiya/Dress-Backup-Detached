@@ -1,0 +1,9 @@
+<ng-container *ngIf="(album | async) as album">
+  <div [innerHTML]="marked(album.readme)" *ngIf="album.readme; else title"></div>
+  <ng-template #title><h2>{{album.name}}</h2></ng-template>
+
+
+  <a *ngFor="let file of album.files" [href]="'Dress/' + album.name + '/' + file" target="_blank">
+    <img [src]="'Dress/' + album.name + '/' + file">
+  </a>
+</ng-container>

@@ -1,0 +1,32 @@
+a {
+  width: 196px;
+  display: block;
+  float: left;
+  text-decoration: none;
+  color: initial;
+  margin: 4px 4px 20px 4px;
+}
+
+img {
+  width: 196px;
+  height: 196px;
+  object-fit: cover;
+  transition: transform 0.2s;
+}
+
+img:hover {
+  transform: scale(1.04);
+}
+
+.title {
+  font-weight: bold;
+}
+
+.count {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.info {
+  display: flex;
+  /*justify-content: space-around;*/
+}

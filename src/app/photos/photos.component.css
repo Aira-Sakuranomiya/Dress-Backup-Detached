@@ -1,0 +1,55 @@
+/*.grid-container {*/
+/*margin: 20px;*/
+/*}*/
+
+/*.dashboard-card {*/
+/*position: absolute;*/
+/*top: 15px;*/
+/*left: 15px;*/
+/*right: 15px;*/
+/*bottom: 15px;*/
+/*}*/
+
+/*.more-button {*/
+/*position: absolute;*/
+/*top: 5px;*/
+/*right: 10px;*/
+/*}*/
+
+/*.dashboard-card-content {*/
+/*text-align: center;*/
+/*}*/
+
+img {
+  height: 215px;
+  margin-left: 2px;
+  margin-right: 2px;
+  transition: transform 0.2s;
+}
+
+img:hover {
+  transform: scale(1.04);
+}
+
+h4 span {
+  margin-right: 8px;
+}
+
+.author,
+.message {
+  font-weight: normal;
+}
+
+.message:before {
+  content: '“';
+}
+
+.message:after {
+  content: '”';
+}
+
+.commit {
+  margin-left: 16px;
+  margin-right: 16px;
+  float: left;
+}

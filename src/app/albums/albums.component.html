@@ -1,0 +1,22 @@
+<!--<div class="grid-container">-->
+<!--&lt;!&ndash;<h1 class="mat-h1">Dashboard</h1>&ndash;&gt;-->
+<!--<div *ngIf="treeRequest | async as data">-->
+<!--<ng-container *ngFor="let item of data.tree">-->
+<!--<h2 *ngIf="item.type === 'tree'">{{item.path}}</h2>-->
+<!--<a *ngIf="rawUrl(item) as url" [href]="url" target="_blank">-->
+<!--<img [src]="url">-->
+<!--</a>-->
+<!--</ng-container>-->
+<!--</div>-->
+<!--</div>-->
+<div *ngFor="let album of albums">
+  <a [routerLink]="album.name">
+    <img [src]="'Dress/' + album.name + '/' + album.files[0]">
+    <div class="info">
+      <span class="title">{{album.name}}</span>
+      <!--<span class="count">{{album.files.length}}项</span>-->
+    </div>
+  </a>
+
+
+</div>
