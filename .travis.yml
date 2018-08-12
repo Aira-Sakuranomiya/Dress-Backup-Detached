@@ -12,7 +12,6 @@ deploy:
   provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
-  fqdn: satori.mycard.moe
   local-dir: dist/dress
   committer-from-gh: true
   on:
