@@ -21,9 +21,10 @@ import { AlbumsComponent } from './albums/albums.component';
 import { AlbumComponent } from './album/album.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { PhotoComponent } from './photo/photo.component';
 
 @NgModule({
-  declarations: [AppComponent, PhotosComponent, AlbumsComponent, AlbumComponent],
+  declarations: [AppComponent, PhotosComponent, AlbumsComponent, AlbumComponent, PhotoComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

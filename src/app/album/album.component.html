@@ -3,7 +3,7 @@
   <ng-template #title><h2>{{album.name}}</h2></ng-template>
 
 
-  <a *ngFor="let file of album.files" [href]="'Dress/' + album.name + '/' + file" target="_blank">
+  <a *ngFor="let file of album.files" [routerLink]="['/photos', album.name, file]">
     <img [src]="'Dress/' + album.name + '/' + file">
   </a>
 </ng-container>

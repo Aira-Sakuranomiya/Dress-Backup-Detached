@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { PhotosComponent } from './photos/photos.component';
 import { AlbumsComponent } from './albums/albums.component';
 import { AlbumComponent } from './album/album.component';
+import { PhotoComponent } from './photo/photo.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'photos', pathMatch: 'full' },
   { path: 'photos', component: PhotosComponent },
+  { path: 'photos/:album/:filename', component: PhotoComponent },
   { path: 'albums', component: AlbumsComponent },
   { path: 'albums/:id', component: AlbumComponent }
 ];

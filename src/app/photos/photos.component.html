@@ -4,7 +4,7 @@
     <span class="author">{{commit.username}}</span>
     <span class="message" *ngIf="commit.message">{{commit.message}}</span>
   </h4>
-  <a *ngFor="let file of commit.files" [href]="'Dress/' + file" target="_blank">
+  <a *ngFor="let file of commit.files" [routerLink]="file">
     <img [src]="'Dress/' + file">
   </a>
 </div>
