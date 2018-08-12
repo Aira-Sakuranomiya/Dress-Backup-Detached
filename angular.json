@@ -43,7 +43,8 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/Dress"
+              "src/manifest.json",
+              { "glob": "**/*.@(jpg|JPG|png|PNG)", "input": "src/Dress", "output": "Dress" }
             ],
             "styles": [
               {
@@ -70,7 +71,8 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "serviceWorker": true
             }
           }
         },
@@ -107,7 +109,8 @@
             "scripts": [],
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.json"
             ]
           }
         },

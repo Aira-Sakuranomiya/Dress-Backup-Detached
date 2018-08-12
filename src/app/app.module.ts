@@ -19,6 +19,8 @@ import { PhotosComponent } from './photos/photos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AlbumsComponent } from './albums/albums.component';
 import { AlbumComponent } from './album/album.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent, PhotosComponent, AlbumsComponent, AlbumComponent],
@@ -35,7 +37,8 @@ import { AlbumComponent } from './album/album.component';
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
