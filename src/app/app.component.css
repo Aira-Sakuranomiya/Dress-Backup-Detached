@@ -15,3 +15,7 @@ mat-sidenav-content {
   display: flex;
   flex-direction: column;
 }
+
+mat-toolbar {
+  flex-shrink: 0;
+}

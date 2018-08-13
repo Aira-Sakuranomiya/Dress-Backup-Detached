@@ -2,8 +2,7 @@ img {
   max-width: 100%;
   max-height: 100%;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  object-fit: contain;
 }
 
 :host {
@@ -11,13 +10,37 @@ img {
   flex: 1;
 }
 
+mat-toolbar.mat-toolbar {
+  position: absolute;
+  background: linear-gradient(0deg,rgba(0,0,0,0),rgba(0,0,0,0.4));
+}
+
+mat-toolbar span {
+  flex: 1;
+}
+
 #wrapper {
   flex: 1;
   justify-content: center;
+  background: black;
+  position: relative;
+  display: flex;
 }
 
 mat-list {
   width: 360px;
+}
+
+mat-list.handset {
+  position: absolute;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.6);
+  width: 100%;
+}
+
+h3 {
+  display: flex;
+  justify-content: space-between;
 }
 
 h4 {

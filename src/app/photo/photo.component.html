@@ -1,8 +1,17 @@
 <div id="wrapper">
-  <img #image [src]="'Dress/' + album + '/' + filename" (load)="load()">
+  <mat-toolbar color="primary">
+    <button type="button" mat-icon-button (click)="location.back()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span></span>
+    <button type="button" mat-icon-button (click)="showInfo = !showInfo">
+      <mat-icon>info</mat-icon>
+    </button>
+  </mat-toolbar>
+  <img #image [src]="'Dress/' + album + '/' + filename" (load)="load()" (loadedmetadata)="loadedmetadata = true">
 </div>
-<mat-list>
-  <h3 mat-subheader>详情</h3>
+<mat-list *ngIf="showInfo" [class.handset]="isHandset$ | async">
+  <h3 mat-subheader>详情<mat-icon (click)="showInfo = false">close</mat-icon></h3>
   <mat-list-item>
     <mat-icon mat-list-icon>date_range</mat-icon>
     <h4 mat-line>{{commit.date | date}}</h4>
@@ -12,8 +21,8 @@
   <mat-list-item>
     <mat-icon mat-list-icon>photo</mat-icon>
     <h4 mat-line>{{filename}}</h4>
-    <p mat-line>
-      <span>{{(image.naturalWidth * image.naturalHeight / 1000000) .toFixed(1)}}MP</span>
+    <p mat-line *ngIf="loadedmetadata">
+      <span>{{(image.naturalWidth * image.naturalHeight / 1000000).toFixed(1)}}MP</span>
       <span>{{image.naturalWidth}}x{{image.naturalHeight}}</span>
       <span>{{image.filesize}}</span>
     </p>

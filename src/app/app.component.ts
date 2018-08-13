@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { map } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
+import { Router, RoutesRecognized } from '@angular/router';
+import { PhotoComponent } from './photo/photo.component';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +15,10 @@ export class AppComponent {
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
     .pipe(map(result => result.matches));
+  showToolbar = this.router.events.pipe(
+    filter(val => val instanceof RoutesRecognized),
+    map((val: RoutesRecognized) => val.state.root.firstChild.component !== PhotoComponent)
+  );
 
-  constructor(private breakpointObserver: BreakpointObserver) {
-  }
+  constructor(private breakpointObserver: BreakpointObserver, private router: Router) {}
 }
