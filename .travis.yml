@@ -8,12 +8,14 @@ cache:
     - '$HOME/.npm'
 
 script: npm run build
+
 deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $GITHUB_TOKEN
+  provider: s3
+  access_key_id: 4RKKCXI3BNASYT3LMTKU
+  secret_access_key: Pzt3YF9LdGLLik2HGIy6JWiSfVzwwcwljKUDR0RwB0s
+  bucket: satori
+  skip_cleanup: true
   local-dir: dist/dress
-  committer-from-gh: true
-  keep-history: true
+  endpoint: https://nyc3.digitaloceanspaces.com
   on:
     branch: web
