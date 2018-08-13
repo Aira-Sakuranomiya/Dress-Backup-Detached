@@ -18,3 +18,5 @@ deploy:
   endpoint: https://minio.mycard.moe:9000
   edge:
     branch: ha-s3-endpoint
+  on:
+    all_branches: true
