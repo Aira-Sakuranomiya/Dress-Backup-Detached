@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const types = ['.png', '.jpg', '.gif', '.webp', '.bmp', '.svg'];
+const types = ['.png', '.jpg'];
 
 const result = [];
 for (const filename of fs.readdirSync('Dress')) {
@@ -13,7 +13,7 @@ for (const filename of fs.readdirSync('Dress')) {
     const album = {
       name: filename,
       readme: fs.existsSync(readme) && fs.readFileSync(readme, { encoding: 'utf-8' }),
-      files: fs.readdirSync(file).filter(file => types.includes(path.extname(file)))
+      files: fs.readdirSync(file).filter(file => types.includes(path.extname(file).toLowerCase()))
     };
     if (!album.files.length) {
       continue;

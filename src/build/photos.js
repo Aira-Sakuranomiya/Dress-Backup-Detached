@@ -3,7 +3,7 @@ const path = require('path');
 const photos = require('../commits.json');
 const result = [];
 
-const types = ['.png', '.jpg', '.gif', '.webp', '.bmp', '.svg'];
+const types = ['.png', '.jpg'];
 
 for (const commit of photos) {
   // 去除没有文件的提交
@@ -14,7 +14,7 @@ for (const commit of photos) {
   const files = [];
   for (const file of commit.files) {
     // 去除不是图片的文件和不存在了的文件
-    if (types.includes(path.extname(file)) && fs.existsSync(path.join('Dress', file))) {
+    if (types.includes(path.extname(file).toLowerCase()) && fs.existsSync(path.join('Dress', file))) {
       files.push(file);
     }
   }

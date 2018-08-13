@@ -4,7 +4,7 @@ cache:
   directories:
     - '$HOME/.npm'
 before_install:
-  - if [ "$TRAVIS_BRANCH" = "master" ]; then git checkout web; fi
+  - if [ "$TRAVIS_BRANCH" = "master" ]; then git remote set-branches --add origin web; git fetch origin web; git checkout web; fi
 script: npm run build
 deploy:
   provider: s3
@@ -15,7 +15,7 @@ deploy:
   bucket: satori
   skip_cleanup: true
   local-dir: dist/dress
-  endpoint: https://minio.mycard.moe:9000/satori
+  endpoint: https://minio.moecube.com/satori
   edge:
     branch: ha-s3-endpoint
   on:
