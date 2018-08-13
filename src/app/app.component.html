@@ -1,5 +1,6 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav
+    *ngIf="showToolbar | async"
     #drawer
     class="sidenav"
     fixedInViewport="true"
