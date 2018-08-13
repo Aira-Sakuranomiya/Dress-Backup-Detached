@@ -9,14 +9,15 @@
 <!--</ng-container>-->
 <!--</div>-->
 <!--</div>-->
-<div *ngFor="let album of albums">
-  <a [routerLink]="album.name">
-    <img [src]="'Dress/' + album.name + '/' + album.files[0]">
-    <div class="info">
-      <span class="title">{{album.name}}</span>
-      <!--<span class="count">{{album.files.length}}项</span>-->
-    </div>
+<div *ngFor="let album of albums" class="item">
+  <a class="cover-wrapper" [routerLink]="album.name">
+    <img class="cover" [src]="'Dress/' + album.name + '/' + album.files[0]">
   </a>
-
-
+  <div class="info">
+    <a [href]="'https://github.com/' + album.name" target="_blank">
+      <img class="avatar" [src]="'https://avatars.githubusercontent.com/' + album.name + '?size=20'">
+      <span class="title">{{album.name}}</span>
+    </a>
+    <!--<span class="count">{{album.files.length}}项</span>-->
+  </div>
 </div>
