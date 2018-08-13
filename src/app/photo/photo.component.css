@@ -34,7 +34,7 @@ mat-list {
 mat-list.handset {
   position: absolute;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.8);
   width: 100%;
 }
 
