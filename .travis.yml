@@ -17,6 +17,7 @@ deploy:
   skip_cleanup: true
   local-dir: dist/dress
   endpoint: https://nyc3.digitaloceanspaces.com
-  edge: true
+  edge:
+    branch: ha-s3-endpoint
   on:
     branch: web
