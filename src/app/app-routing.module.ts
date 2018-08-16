@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: 'photos', component: PhotosComponent },
   { path: 'photos/:album/:filename', component: PhotoComponent },
   { path: 'albums', component: AlbumsComponent },
-  { path: 'albums/:id', component: AlbumComponent }
+  { path: 'albums/:album', component: AlbumComponent },
+  { path: 'albums/:album/:filename', component: PhotoComponent },
 ];
 
 @NgModule({

@@ -1,8 +1,9 @@
-import { ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ChangeDetectorRef, Component, ElementRef, HostBinding, HostListener, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import * as EXIF from 'exif-js';
 import commits from '../../data/photos.json';
+import albums from '../../data/albums.json';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -28,8 +29,31 @@ export class PhotoComponent {
     .observe(Breakpoints.Handset)
     .pipe(map(result => result.matches));
 
+  group: string[] =
+    this.route.snapshot.url[0].path === 'albums'
+      ? albums.find(album => album.name === this.album).files.map(file => this.album + '/' + file)
+      : this.commit.files;
+
+  groupPrev = this.group[this.group.indexOf(this.album + '/' + this.filename) - 1];
+  groupNext = this.group[this.group.indexOf(this.album + '/' + this.filename) + 1];
+
+  @HostListener('window:keydown.ArrowLeft')
+  prev() {
+    if (this.groupPrev) {
+      return this.router.navigate(['/' + this.route.snapshot.url[0].path, ...this.groupPrev.split('/')]);
+    }
+  }
+
+  @HostListener('window:keydown.ArrowRight')
+  next() {
+    if (this.groupNext) {
+      return this.router.navigate(['/' + this.route.snapshot.url[0].path, ...this.groupNext.split('/')]);
+    }
+  }
+
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private breakpointObserver: BreakpointObserver,
     public location: Location,
     private ref: ChangeDetectorRef

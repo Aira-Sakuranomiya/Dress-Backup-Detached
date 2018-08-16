@@ -22,6 +22,8 @@ import { AlbumComponent } from './album/album.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { PhotoComponent } from './photo/photo.component';
+import { RouteReuseStrategy } from '@angular/router';
+import { CustomReuseStrategy } from './reuse-strategy';
 
 @NgModule({
   declarations: [AppComponent, PhotosComponent, AlbumsComponent, AlbumComponent, PhotoComponent],
@@ -41,7 +43,7 @@ import { PhotoComponent } from './photo/photo.component';
     HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [{provide: RouteReuseStrategy, useClass: CustomReuseStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

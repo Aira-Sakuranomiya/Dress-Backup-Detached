@@ -11,7 +11,7 @@ import * as marked from 'marked';
 })
 export class AlbumComponent implements OnInit {
   album = this.route.paramMap.pipe(
-    map(params => albums.find(album => album.name === params.get('id')))
+    map(params => albums.find(album => album.name === params.get('album')))
   );
   marked = marked;
 

@@ -4,7 +4,9 @@
   float: left;
   text-decoration: none;
   color: initial;
-  margin: 4px 4px 20px 4px;
+  margin: 4px;
+
+  position: relative;
 }
 
 .cover {
@@ -12,6 +14,7 @@
   height: 196px;
   object-fit: cover;
   transition: transform 0.2s;
+  display: block;
 }
 
 .cover:hover {
@@ -20,13 +23,22 @@
 .avatar {
   border-radius: 50%;
   margin-right: 4px;
-  width: 20px;
-  height: 20px;
-  vertical-align: bottom;
+  /*width: 20px;*/
+  /*height: 20px;*/
+  /*vertical-align: bottom;*/
+
+
+  height: 24px;
+  width: 24px;
+  top: -12px;
+  position: absolute;
 }
 
 .title {
-  font-weight: bold;
+  /*font-weight: bold;*/
+  margin-top: 16px;
+  display: block;
+  font: 400 17px/24px Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
 }
 
 .count {
@@ -34,10 +46,14 @@
 }
 
 .info {
-  display: flex;
-  /*justify-content: space-around;*/
-}
-.info a {
+  bottom: 0;
+  height: 56px;
+  left: 0;
+  padding: 0 20px;
+  position: absolute;
+  right: 0;
+  background-color: rgba(0,0,0,0.5);
   text-decoration: none;
-  color: initial;
+  color: white;
+  display: block;
 }
