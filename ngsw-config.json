@@ -10,26 +10,25 @@
           "/index.html",
           "/*.css",
           "/*.js",
-          "/*.woff2"
+          "/manifest.json",
+          "/MaterialIcons-Regular.*.woff2"
         ]
       }
-    }, {
+    },
+    {
       "name": "assets",
       "installMode": "lazy",
       "updateMode": "prefetch",
       "resources": {
-        "files": [
-          "/assets/**"
-        ]
+        "files": ["/assets/**", "/Roboto-*.woff2"]
       }
-    }, {
+    },
+    {
       "name": "dress",
       "installMode": "lazy",
       "updateMode": "lazy",
       "resources": {
-        "files": [
-          "/Dress/**"
-        ]
+        "files": ["/Dress/**"]
       }
     }
   ]

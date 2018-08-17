@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { filter, map } from 'rxjs/operators';
@@ -19,6 +19,13 @@ export class AppComponent {
     filter(val => val instanceof RoutesRecognized),
     map((val: RoutesRecognized) => val.state.root.firstChild.component !== PhotoComponent)
   );
+
+  @HostListener('window.beforeinstallprompt')
+  beforeinstallprompt(event) {
+    console.log(event);
+    event.preventDefault();
+    return false;
+  }
 
   constructor(private breakpointObserver: BreakpointObserver, private router: Router) {}
 }
