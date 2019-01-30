@@ -57,7 +57,13 @@ export class PhotoComponent {
     private breakpointObserver: BreakpointObserver,
     public location: Location,
     private ref: ChangeDetectorRef
-  ) {}
+  ) {
+    this.location = location; 
+  }
+
+  goBack() {
+    this.location.back()
+  }
 
   async load() {
     this.ref.markForCheck();
